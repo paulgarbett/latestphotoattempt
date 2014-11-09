@@ -6,6 +6,9 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id])
+
+    # adding in comments on show page
+    @comment = Comment.new
 	end
 
 	def new
@@ -38,6 +41,16 @@ class PostsController < ApplicationController
   	@post = Post.find(params[:id])
   	@post.destroy
   	redirect_to posts_path
+  end
+
+  # new comment 
+  def new_comment
+    @id = params[:id_post]
+    @post = Post.find(@id)
+    @post.comment << Comment.new(params.require(:comment).permit(:author, :comment))
+    if @post.save
+      redirect_to post_path(:post => @id)
+    end
   end
 
 
