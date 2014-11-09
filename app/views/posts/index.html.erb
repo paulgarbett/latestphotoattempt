@@ -2,7 +2,9 @@
 <ul>
     <% @posts.each do |p| %>
         <li>
-            <strong> <%= p.title %> </strong> -- <%= p.camera %> <%= p.desc%>
+            <strong> <%= p.title %> </strong> -- <%= p.camera %> <%= p.desc%> -- <%= link_to "Show", post_path(p) %>
         </li>
     <% end %>
 </ul>
+
+<%= link_to "Make a post", new_post_path %>
