@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
         # sets the cookie to the browser
         session[:user_id] = user.id.to_s
         redirect_to posts_path 
-        # ^^^ here redirect to something_path , where you want them logged in.
+       
     else
         flash.now.alert = "Email or password is invalid"
         render "new"
