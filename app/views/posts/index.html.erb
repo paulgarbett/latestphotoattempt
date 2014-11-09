@@ -1,0 +1,8 @@
+<h1>Blog Posts</h1>
+<ul>
+    <% @posts.each do |p| %>
+        <li>
+            <strong> <%= p.title %> </strong> -- <%= p.camera %> <%= p.desc%>
+        </li>
+    <% end %>
+</ul>
