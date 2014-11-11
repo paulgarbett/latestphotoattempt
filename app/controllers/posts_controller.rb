@@ -45,11 +45,11 @@ class PostsController < ApplicationController
 
   # new comment 
   def new_comment
-    @id = params[:id_post]
+    @id = params[:post_id]
     @post = Post.find(@id)
-    @post.comment << Comment.new(params.require(:comment).permit(:author, :comment))
+    @post.comments << Comment.new(params.require(:comment).permit(:author, :comment))
     if @post.save
-      redirect_to post_path(:post => @id)
+      redirect_to post_path(:id => @id)
     end
   end
 

@@ -18,7 +18,7 @@
 <!--Added in -->
 <h2>New Comment</h2>
 
-<%= form_for(@comment ,:url => {:action => :new_comment, :controller => :post} ) do |f| %>
+<%= form_for(@comment ,:url => {:action => :new_comment, :controller => :posts} ) do |f| %>
 
 	 <!--hidden field -->
 	 <%= hidden_field_tag :post_id, @post.id %>

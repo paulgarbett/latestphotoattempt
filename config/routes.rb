@@ -8,7 +8,7 @@ PhotoBlog::Application.routes.draw do
   resources :posts
 
   # adding in comments
-  post 'post/new_comment' => 'post#new_comment', as: :new_comment
+  post 'posts/new_comment' => 'posts#new_comment', as: :new_comment
 
   root 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.
